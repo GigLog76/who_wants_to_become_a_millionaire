@@ -11,10 +11,12 @@
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.exe",
                 "-I", "C:/msys64/mingw64/include",
+                "-I", "C:/Users/Alfa/OneDrive/Desktop/practice",
                 "-L", "C:/msys64/mingw64/lib",
                 "-lsfml-graphics",
                 "-lsfml-window",
-                "-lsfml-system"
+                "-lsfml-system",
+                "-lsfml-audio"
             ],
             "group": {
                 "kind": "build",
