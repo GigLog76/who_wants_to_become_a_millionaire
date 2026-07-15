@@ -115,9 +115,8 @@ backText.setString(toSFString("Назад"));
 backText.setFillColor(sf::Color::White);
 backText.setPosition({340.f, 510.f});
 
-// Основной цикл (теперь один)
+
 while (window.isOpen()) {
-    // ---- ОБРАБОТКА СОБЫТИЙ (общая) ----
     while (auto event = window.pollEvent()) {
         if (event->is<sf::Event::Closed>()) {
             window.close();
@@ -127,7 +126,7 @@ while (window.isOpen()) {
             if (mouse->button == sf::Mouse::Button::Left) {
                 sf::Vector2f worldPos = window.mapPixelToCoords(mouse->position);
 
-                // Если мы в меню
+                
                 if (!startGame && !exitGame && !rules && !setting) {
                     if (startButton.getGlobalBounds().contains(worldPos)) {
                         startGame = true;
@@ -142,12 +141,12 @@ while (window.isOpen()) {
                 }
                 else if (rules) {
                     if (backButton.getGlobalBounds().contains(worldPos)) {
-                        rules = false;   // возврат в меню
+                        rules = false;  
                     }
                 }
                 else if (setting) {
                     if (backButton.getGlobalBounds().contains(worldPos)) {
-                        setting = false; // возврат в меню
+                        setting = false; 
                     }
                 }
                 else if (startGame) {
@@ -173,14 +172,13 @@ while (window.isOpen()) {
         window.draw(exitTextMenu);
     }
     else if (rules) {
-        // Экран правил
         window.draw(rulesTitleText);
         window.draw(backButton);
         window.draw(backText);
     }
     else if (setting) {
         sf::Text settingsText(font, "", 30);
-        settingsText.setString(toSFString("Настройки (пока пусто)"));
+        settingsText.setString(toSFString("Настройки (скоро будут)"));
         settingsText.setFillColor(sf::Color::White);
         settingsText.setPosition({100.f, 100.f});
         window.draw(settingsText);
