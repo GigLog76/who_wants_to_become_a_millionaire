@@ -9,6 +9,7 @@
 #include <random>
 #include "Question.h"
 #include "json.hpp"
+#include "hints.h"
 extern std::vector<Question> questions; 
 
 void GameProcess();
