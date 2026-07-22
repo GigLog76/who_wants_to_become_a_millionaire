@@ -74,3 +74,13 @@ bool loadWinMusic(sf::Music& music) {
     music.setLooping(true);
     return true;
 }
+
+bool loadWaitingMusic(sf::Music& music) {
+    if (!music.openFromFile("audio/waitingMusic.mp3")) {
+        std::cout << "Музыка ожидания не загружена!" << std::endl;
+        return false;
+    }
+    music.setVolume(50.f);
+    music.setLooping(true);
+    return true;
+}

@@ -7,6 +7,7 @@ struct HintState {
     bool audienceUsed = false;  
     bool secondChanceUsed = false;
     bool showAudience = false;  
+    bool secondChanceConsumed = false; 
     std::array<bool, 4> hidden = {false, false, false, false};
     std::array<bool, 4> wrongGuesses = {false, false, false, false};
     std::array<int, 4> audienceVotes = {0, 0, 0, 0};

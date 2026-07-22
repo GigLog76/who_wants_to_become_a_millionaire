@@ -43,6 +43,8 @@ void addRecord(std::vector<Record>& records, const std::string& name, int prize,
 void sortRecords(std::vector<Record>& records) {
     std::sort(records.begin(), records.end(),
               [](const Record& a, const Record& b) {
-                  return a.prize > b.prize;
+                  if (a.prize != b.prize)
+                      return a.prize > b.prize;      
+                  return a.seconds < b.seconds;      
               });
 }

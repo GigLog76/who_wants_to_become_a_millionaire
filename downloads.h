@@ -11,3 +11,4 @@ bool loadQuestionMusic(sf::Music& music);
 bool loadLoseMusic(sf::Music& music);
 bool loadQuitMusic(sf::Music& music);
 bool loadWinMusic(sf::Music& music);
+bool loadWaitingMusic(sf::Music& music);

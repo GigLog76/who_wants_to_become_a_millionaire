@@ -1,14 +1,22 @@
 #include "game.h"
 #include "Question.h"
 #include <iostream>
+#include "QuestionManager.h" 
 #include <clocale>
+#include <windows.h>
 
-std::vector<Question> questions;   
+
+extern std::vector<Question> questions;
 
 int main() {
     setlocale(LC_ALL, "Russian");
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
     try {
-        questions = loadQuestionsFromFile("questions.json");
+        if (!loadQuestions(questions, "questions.json")) {
+            std::cerr << "Не удалось загрузить вопросы!" << std::endl;
+            return 1;
+        }
         std::cout << "Loaded " << questions.size() << " questions.\n";
         GameProcess();
     } catch (const std::exception& e) {
